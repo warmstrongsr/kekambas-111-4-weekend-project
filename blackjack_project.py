@@ -3,7 +3,7 @@ import random
 class Card:
     def __init__(self,value,suit):
         self.rank = value
-                      #1  | 2  | 3  | 4  | 5  | 6  | 7  | 8  | 9  | 10 | 11 | 12 | 13 
+            #           1  | 2  | 3  | 4  | 5  | 6  | 7  | 8  | 9  | 10 | 11 | 12 | 13 
         self.value = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'][value-1] # -1 because ex. 10 is in index[9] so minus 1 index
         self.suit = '♥♦♣♠'[suit-1] # 1,2,3,4 = ♥♦♣♠
         
@@ -133,7 +133,7 @@ class Game:
         elif self.dealer.check_score() < self.Hand.check_score():
             print("You won. Congratulations!")
             
-    def play_again(self):
+    def play_again(self): #**********************Is looping to play again BUT it is now adding old hands until you quit the game :( ***********
         while True:
             self.play()
             play_again = input("Do you want to play again? (Y/N) ")
@@ -141,4 +141,4 @@ class Game:
                 break
                
 g = Game()
-g.play()
+g.play_again()
